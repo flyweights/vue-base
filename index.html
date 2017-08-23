@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Vue</title>
+    <link rel="stylesheet" href="./semantic.min.css">
+    <script src="./vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <div class="ui container">
+            <div class="ui hidden">
+                <div class="ui green inverted segment">
+                    {{ message }}
+                </div>
+
+                <div class="ui input">
+                    <input :value="message"
+                           @input="messageTrigger">
+                </div>
+
+                <div class="ui input">
+                    <input v-model="message">
+                </div>
+            </div>
+        </div>
+
+        <div>---</div>
+
+        <div class="ui container">
+            <div class="ui hidden">
+                <div class="ui green inverted segment">
+                    {{ boolArr }}
+                </div>
+
+                <div class="ui checkbox">
+                    <input type="checkbox" value="hello" v-model="boolArr">
+                    <label>
+                        hello
+                    </label>
+                </div>
+
+                <div class="ui checkbox">
+                    <input type="checkbox" value="hola" v-model="boolArr">
+                    <label>
+                        hola
+                    </label>
+                </div>
+
+                <div class="ui checkbox">
+                    <input type="checkbox" value="nihao" v-model="boolArr">
+                    <label>
+                        nihao
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <div>---</div>
+
+        <div class="ui container">
+            <div class="ui hidden">
+                <div class="ui green inverted segment">
+                    {{ radioArr }}
+                </div>
+
+                <div class="ui checkbox radio">
+                    <input type="radio" value="hello" v-model="radioArr">
+                    <label>
+                        hello
+                    </label>
+                </div>
+
+                <div class="ui checkbox radio">
+                    <input type="radio" value="hola" v-model="radioArr">
+                    <label>
+                        hola
+                    </label>
+                </div>
+
+                <div class="ui checkbox radio">
+                    <input type="radio" value="nihao" v-model="radioArr">
+                    <label>
+                        nihao
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div>---</div>
+        <div class="ui container">
+            <div class="ui hidden">
+                <div class="ui pink inverted segment">
+                    {{ selected }}
+                </div>
+
+                <select class="ui fluid dropdown" v-model="selected">
+                    <option v-for="option in options" :value="option.value">
+                        {{ option.value }}
+                    </option>
+                </select>
+            </div>
+        </div>
+
+    </div>
+<script src="./index.js"></script>
+</body>
+</html>
